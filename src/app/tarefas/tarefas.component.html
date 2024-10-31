@@ -1,0 +1,19 @@
+<div>
+    <h1>Lista de Tarefas</h1>
+    <table>
+      <tr *ngFor="let tarefa of tarefas">
+        <td [ngStyle]="{ 'background-color': tarefa.custo >= 1000 ? 'yellow' : 'white' }">
+          {{ tarefa.nome }} - R$ {{ tarefa.custo }} - {{ tarefa.data_limite }}
+        </td>
+        <td>
+          <button (click)="editTarefa(tarefa.id)">Editar</button>
+          <button (click)="deleteTarefa(tarefa.id)">Excluir</button>
+        </td>
+      </tr>
+    </table>
+    <h2>Nova Tarefa</h2>
+    <input [(ngModel)]="newTarefa.nome" placeholder="Nome da Tarefa" />
+    <input [(ngModel)]="newTarefa.custo" placeholder="Custo (R$)" type="number" />
+    <input [(ngModel)]="newTarefa.data_limite" placeholder="Data Limite" type="date" />
+    <button (click)="addTarefa()">Incluir</button>
+</div>

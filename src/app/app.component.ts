@@ -1,13 +1,14 @@
-import { Component, VERSION } from '@angular/core';
-import { HelloComponent } from './hello.component';
+import { Component } from '@angular/core';
+import { AppModule } from './app.module'; // Importa o AppModule
+import { MenuComponent } from './components/menu.component'; // Importe se precisar de MenuComponent explicitamente
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [AppModule, MenuComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [HelloComponent],
 })
 export class AppComponent {
-  name = 'tarefas' + VERSION.major;
+  name = 'tarefas';
 }

@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { AppModule } from './app.module'; // Importa o AppModule
-import { MenuComponent } from './components/menu.component'; // Importe se precisar de MenuComponent explicitamente
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AppModule, MenuComponent],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
